@@ -3,7 +3,7 @@
     <!-- <app-quote-form></app-quote-form> -->
     <!-- <hr>
     <ol>
-        <div *ngFor='let quote of quotes ; let i=index'>
+        <div *ngFor='let quote of quotes '>
 
         <li>{{newQuote}}</li>
         <button (click)='toggleDetails(i)'>Toggle details</button>
@@ -11,11 +11,11 @@
     </div>
     </ol> -->
     <ul>
-        <li *ngFor='let quote of quotes'>
+        <div *ngFor='let quote of quotes; let i=index'>
            
-            {{quote.text}}
-    
-            <app-quote-detail [quote]='quote'></app-quote-detail>
-        </li>
+            <li>{{quote.text}}</li>
+       <button (click)='toggleDetails(i)'>Details</button>
+            <app-quote-detail *ngIf='quote.author'[quote]='quote'></app-quote-detail>
+        </div>
     </ul>
 </div>
