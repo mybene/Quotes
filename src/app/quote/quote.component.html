@@ -1,11 +1,21 @@
 <div style="text-align:center">
+
+    <!-- <app-quote-form></app-quote-form> -->
+    <!-- <hr>
+    <ol>
+        <div *ngFor='let quote of quotes ; let i=index'>
+
+        <li>{{newQuote}}</li>
+        <button (click)='toggleDetails(i)'>Toggle details</button>
+        <app-quote-form *ngIf='quote.showAuthor' [quote]='quote'></app-quote-form>
+    </div>
+    </ol> -->
+    <ul>
+        <li *ngFor='let quote of quotes'>
+           
+            {{quote.text}}
     
-    <app-quote-form></app-quote-form>
-    <hr>
-    <!-- <ul>
-        <li *ngfor='let quote of quotes'>
-            {{quote.name}}
             <app-quote-detail [quote]='quote'></app-quote-detail>
         </li>
-    </ul> -->
+    </ul>
 </div>
