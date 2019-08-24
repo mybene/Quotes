@@ -7,16 +7,7 @@ import { Quote } from './quote';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Quotes';
-  // quotes:string[];
-  quotes:Quote[] =[
-    new Quote(1,'Together,we can','Martin R.K','Black Oboma'),
-    new Quote(2,'Better to bron poor than to die poorer','Sagesse togolais','Serge Massanvi'),
-    new Quote(3,'Success comes with pratices','Maweden','JP Kayobotsi'),
-  ];
+export class  AppComponent {
 
-  // constructor (){
-  //   this.quotes=['Better to bron poor than to die poorer','Time wasted do not come back','Love does not cost anything'];
-  // }
+  constructor (){}
 }
