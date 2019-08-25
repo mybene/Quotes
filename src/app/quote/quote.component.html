@@ -4,8 +4,40 @@
         <div *ngFor='let quote of quotes; let i=index'>
 
             <li appHighligth>{{quote.text}}<em>written by:</em>{{quote.writtenBy}} <em>,its author</em> {{quote.author}} <em> due on </em>{{quote.completeDate|date|Uppercase}} days ago</li>
-            <!-- <button (click)='toggleDetails(i)'>Details</button> -->
+            <!-- <button (click)='toggleDetails(i)'>Details</button> no need to toggle the details -->
+            <button (click)="upvote(i)" class="btn btn-primary btn-xs">
+                <i class="up"></i>{{quote.upvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png" height="38" width="38">
+            </button>&nbsp;&nbsp;&nbsp;
+            <button (click)="downvote(i)" class="btn btn-primary btn-xs">
+                    <i class="down"></i>{{quote.downvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png" height="38" width="38">
+                </button>&nbsp;&nbsp;&nbsp;
             <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='completeQuote($event,i)'></app-quote-detail>
         </div>
     </ul>
 </div>
+
+
+<!-- <div class="container">
+
+        <div class="row">
+            <app-kote-form (addKote)="addNewKote($event)"></app-kote-form>
+            </div>
+            <div class="row" *ngFor="let kote of kotes;let i = 'index'">
+    
+                <ul>
+                    <li id="listed">
+                        <h5 appStrikethrough>{{kote.name}} <em>written by :</em> {{kote.user}} --<em>author :</em>{{kote.author}} due on {{kote.completeDate|date|uppercase}}</h5>
+                    </li>
+    
+             
+                </button> &nbsp;&nbsp;
+                    <button (click)="downvote(i)" class="btn btn-danger btn-xs">
+                <i class="down"></i>{{ kote.downvotes }} <img src="" height="35" width="35">
+                </button> &nbsp;&nbsp;
+                    <app-kote-details [kote]='kote' (isComplete)='deleteKote($event,i)'></app-kote-details>
+    
+                </ul>
+            </div>
+    
+    
+        </div> -->
