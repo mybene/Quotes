@@ -3,7 +3,7 @@
     <ul>
         <div *ngFor='let quote of quotes; let i=index'>
 
-            <li appHighligth>{{quote.text}} due on {{quote.completeDate|date|Uppercase}} days ago</li>
+            <li appHighligth>{{quote.text}}<em>written by:</em>{{quote.writtenBy}} <em>,its author</em> {{quote.author}} <em> due on </em>{{quote.completeDate|date|Uppercase}} days ago</li>
             <!-- <button (click)='toggleDetails(i)'>Details</button> -->
             <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='completeQuote($event,i)'></app-quote-detail>
         </div>

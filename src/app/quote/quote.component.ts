@@ -1,6 +1,6 @@
 import { Component,OnInit } from "@angular/core";
 import { Quote } from "../quote";
-// import { QuoteComponent } from './quote.component';
+
 
 @Component({
   selector: "app-quote",
@@ -15,22 +15,42 @@ export class QuoteComponent implements OnInit {
     new Quote(3,'Success','Maweden','JP Kayobotsi',new Date(2014,6,08)),
   ];
 
-  toggleDetails(index){
-    this.quotes[index].showDescription =!this.quotes[index].showDescription;
+  // no needm to hide the details
+  // toggleDetails(index){
+  //   this.quotes[index].showDescription =!this.quotes[index].showDescription;
+  // }
+  
+  
+  upvote(index){
+    this.quotes[index].upvotes++;
+  }
+
+  downvote(index){
+    this.quotes[index].downvotes++;
   }
   completeQuote(isComplete,index){
     if(isComplete){
       this.quotes.splice(index,1);
     }
   }
-  // upvote(index){
-  //   this.quotes[index].upvotes++;
-  // }
 
-  // downvote(index){
-  //   this.quotes[index].downvotes++;
-  // }
+  deleteQuote(isComplete,index){
+    if(isComplete){
+      let toDelete = confirm(
+        Are you sure you want to delete ${this.quotes[index].text}
+      );
+      if (toDelete){
+        this.quotes.splice(index,1);
+      }
+    }
+  }
 
+  addNewQuote(quote){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength + 1;
+    quote.completeDate = new Date(Quote.completeDate);
+    this.quotes.push(quote);
+  }
   
   constructor() {}
 
