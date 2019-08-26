@@ -1,17 +1,15 @@
 <div class="container">
-    <div class="row  form">
+    <div class="row  formulaire">
         <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
 
-    <div *ngFor='let quote of quotes; let i=index'>
+    <div *ngFor="let quote of quotes; let i='index'">
         <ul>
 
             <li>
                 <p appHighligth><b>{{quote.text}} </b> <em> published by: </em>{{quote.writtenBy}} <em>--Author</em>
                     {{quote.author}}  due on {{quote.completeDate|date|uppercase}} </p>
 
-
-                <button (click)='toggleDetails(i)'>Details</button> no need to toggle the details
                 <button (click)="upvote(i)" class="btn btn-primary btn-xs">
                     <i class="up"></i>{{quote.upvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png"
                         height="38" width="38">
@@ -21,7 +19,7 @@
                         height="38" width="38">
                 </button>&nbsp;&nbsp;&nbsp;
 
-                <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='completeQuote($event,i)'></app-quote-detail>
+                <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
             </li>
 
 
@@ -32,3 +30,6 @@
 
 
 
+    
+    
+ 
