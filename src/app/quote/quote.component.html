@@ -1,32 +1,38 @@
-<div class="container">
-    <div class="row  formulaire">
-        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
+    <div class=" formulaire">
+        <app-quote-form (emitQuote)="addNewQuote($event)"></app-quote-form>
     </div>
 
-    <div *ngFor="let quote of quotes; let i='index'">
+    <h3 text-align="center" text="white">Your quotes :</h3>
+    <div *ngFor="let quote of quotes; let i='index'" class="listed  ">
+        
+        <br><br>
         <ul>
-
             <li>
                 <p appHighligth><b>{{quote.text}} </b> <em> published by: </em>{{quote.writtenBy}} <em>--Author</em>
-                    {{quote.author}}  due on {{quote.completeDate|date|uppercase}} </p>
-
+                    {{quote.author}} due on {{quote.completeDate|date|uppercase}} </p>
+    
                 <button (click)="upvote(i)" class="btn btn-primary btn-xs">
-                    <i class="up"></i>{{quote.upvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png"
+                    <i class="up"></i>{{quote.upvotes}}<img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXMnvYaVzHjdbCmgYsLF8XT4aIks_oKu47sNPpbXxT22a7Q1HqbQ"
                         height="38" width="38">
                 </button>&nbsp;&nbsp;&nbsp;
                 <button (click)="downvote(i)" class="btn btn-primary btn-xs">
-                    <i class="down"></i>{{quote.downvotes}}<img src="http://www.pngmart.com/files/5/Broken-Heart-PNG-Transparent-Image.png"
+                    <i class="down"></i>{{quote.downvotes}}<img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxmgdkfbJY0tkUaRvt6-uNKLkReAiidxFh9hYKfCegG0eTxKUpvg"
                         height="38" width="38">
                 </button>&nbsp;&nbsp;&nbsp;
-
+    
                 <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
             </li>
-
-
+    
+    
         </ul>
     </div>
+    
+        
    
-</div> 
+
 
 
 

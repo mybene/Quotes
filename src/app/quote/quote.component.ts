@@ -9,19 +9,22 @@ import { Quote } from "../quote";
 })
 export class QuoteComponent implements OnInit {
  
-  quotes:Quote[] = [
-    new Quote(1,'Together,we can','Martin R.K','Black Obama ',new Date(2019,3,14),0,0),
-    new Quote(2,'To die poorer is a choice ','Sagesse togolais','Serge Massanvi',new Date(2020,10,14),0,0),
-    new Quote(3,'Success','Maweden','JP Kayobotsi',new Date(2014,6,08),0,0),
+  quotes= [
+    new Quote('Together,we can','Martin R.K','Black Obama ',new Date(2019,3,14),0,0),
+    // new Quote('To die poorer is a choice ','Sagesse togolais','Serge Massanvi',new Date(2020,10,14),0,0),
+    // new Quote('Success is a pratice','Maweden','JP Kayobotsi',new Date(2014,6,08),0,0),
   ];
 
-  
+  minNumber:number;
+  maxNumber:number;
+  counter:number;
+
   toggleDetails(index){
     this.quotes[index].showDescription =!this.quotes[index].showDescription;
   }
-  addNewQuote(quote){
-    quote.completeDate = new Date(quote.completeDate);
-    this.quotes.push(quote);
+  addNewQuote(data){
+    console.log(data);
+    this.quotes.push(data);
   }
   
   

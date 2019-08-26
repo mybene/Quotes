@@ -1,24 +1,21 @@
-import { Directive,ElementRef, HostListener } from '@angular/core';
+import { Directive,ElementRef,} from '@angular/core';
 
 @Directive({
-  selector: '[appHighligth]'
-})
+  selector:'[appHighligth]'})
+
 export class HighligthDirective {
 
-  constructor(private elem: ElementRef ) {}
+  constructor(private elem: ElementRef ) {
 
-    @HostListener("click")onClicks(){
-    
-      this.textDeco("aqua");
-    }
-    
-    @HostListener("dblclick") onDoubleClick(){
-      this.textDeco("black");
-    }
-    private textDeco(action:string){
-    this.elem.nativeElement.style.textDecoration=action;
+    this.elem.nativeElement.style.backgroundColor="aqua";
     }
   }
+
+
+
+
+
+
 
 
 

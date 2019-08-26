@@ -1,35 +1,33 @@
-<div class="container-fluid">
-    <div class="row">
-        <h2><em>The following form is for creating your quotes</em></h2>
-        <form (ngSubmit)='submitQuote' #quoteForm='ngForm'>
-            <div class="form-group">
-                <label for="writtenBy">Name of publisher</label>
-                <input type="text" class="form-control" id="writtenBy" placeholder="enter your names" [(ngModel)]="newQuote.writtenBy"
-                    name="user" #writtenBy="ngModel" required>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="author">Name of author</label>
-                <input type="text" class="form-control" id="author" placeholder="enter the names of author" [(ngModel)]="newQuote.author"
-                    name="user" #author="ngModel" required>
-            </div>
-            <div class="form-group">
-                <label for=" text">Enter your quote</label>
-                <textarea class="form-control" id="text" rows="4" [(ngModel)]="newQuote.text" name="text" #description="ngModel"
-                    placeholder="enter your quote" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="completeDate">Due Date</label>
-                <input type="date" class="form-control" id="completeDate" [(ngModel)]="newQuote.completeDate" name="completeDate"
-                    #completeDate="ngModel" required>
-            </div>
-            <br>
-            <br>
-            <button type="submit" id="add" class="btn btn-success btn-lg"> Add quote</button>
-        </form>
-    </div>
+<div id="formulaire">
+    <h2><em>The following form is for creating your quotes</em></h2>
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+        <div class="form-group">
+            <label for="writtenBy">Name of publisher</label>
+            <input type="text" class="form-control" placeholder="enter your names" [(ngModel)]="quotePublisher"
+                name="user" #writtenBy="ngModel" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="author">Name of author</label>
+            <input type="text" class="form-control" placeholder="enter the names of author" [(ngModel)]="quoteAuthor"
+                name="user" #author="ngModel" required>
+        </div>
+        <div class="form-group">
+            <label for=" text">Enter your quote</label>
+            <textarea class="form-control" rows="4" [(ngModel)]="quoteText" name="text" #description="ngModel"
+                placeholder="enter your quote" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="completeDate">Due Date</label>
+            <input type="date" class="form-control" [(ngModel)]="quoteDate" name="completeDate" #completeDate="ngModel"
+                required>
+        </div>
+        <br>
+        <br>
+        <button type="submit" id="add" class="btn btn-success btn-lg"> Add quote</button>
+    </form>
 </div>
+
 <br>
 <br>
-<h3>Your quotes</h3>
-<br><br>
+
