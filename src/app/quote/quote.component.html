@@ -1,42 +1,34 @@
-<div style="text-align:center">
+<div class="container">
+    <div class="row  form">
+        <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->
+    </div>
 
-    <ul>
-        <div *ngFor='let quote of quotes; let i=index'>
+    <div *ngFor='let quote of quotes; let i=index'>
+        <ul>
 
-            <!-- <button (click)='toggleDetails(i)'>Details</button> no need to toggle the details -->
-            <!-- <button (click)="upvote(i)" class="btn btn-primary btn-xs">
-                <i class="up"></i>{{quote.upvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png" height="38" width="38">
-            </button>&nbsp;&nbsp;&nbsp;
-            <button (click)="downvote(i)" class="btn btn-primary btn-xs">
-                    <i class="down"></i>{{quote.downvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png" height="38" width="38">
-                </button>&nbsp;&nbsp;&nbsp; -->
-            <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='completeQuote($event,i)'></app-quote-detail>
-        </div>
-    </ul>
-</div>
+            <li>
+                <p appHighligth><b>{{quote.text}} </b> <em> published by: </em>{{quote.writtenBy}} <em>--Author</em>
+                    {{quote.author}} </p>
 
 
-<!-- <div class="container">
+                <!-- <button (click)='toggleDetails(i)'>Details</button> no need to toggle the details -->
+                <button (click)="upvote(i)" class="btn btn-primary btn-xs">
+                    <i class="up"></i>{{quote.upvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png"
+                        height="38" width="38">
+                </button>&nbsp;&nbsp;&nbsp;
+                <button (click)="downvote(i)" class="btn btn-primary btn-xs">
+                    <i class="down"></i>{{quote.downvotes}}<img src="http://www.pngmart.com/files/5/Broken-Heart-PNG-Transparent-Image.png"
+                        height="38" width="38">
+                </button>&nbsp;&nbsp;&nbsp;
 
-        <div class="row">
-            <app-kote-form (addKote)="addNewKote($event)"></app-kote-form>
-            </div>
-            <div class="row" *ngFor="let kote of kotes;let i = 'index'">
-    
-                <ul>
-                    <li id="listed">
-                        <h5 appStrikethrough>{{kote.name}} <em>written by :</em> {{kote.user}} --<em>author :</em>{{kote.author}} due on {{kote.completeDate|date|uppercase}}</h5>
-                    </li>
-    
-             
-                </button> &nbsp;&nbsp;
-                    <button (click)="downvote(i)" class="btn btn-danger btn-xs">
-                <i class="down"></i>{{ kote.downvotes }} <img src="" height="35" width="35">
-                </button> &nbsp;&nbsp;
-                    <app-kote-details [kote]='kote' (isComplete)='deleteKote($event,i)'></app-kote-details>
-    
-                </ul>
-            </div>
-    
-    
-        </div> -->
+                <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='completeQuote($event,i)'></app-quote-detail>
+            </li>
+
+
+        </ul>
+    </div>
+   
+</div> 
+
+
+

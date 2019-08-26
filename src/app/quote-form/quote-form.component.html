@@ -4,11 +4,15 @@
         <form (ngSubmit)='submitQuote' #quoteForm='ngForm'>
             <div class="form-group">
                 <label for="writtenBy">Name of publisher</label>
-                <input type="text" class="form-control" id="writtenBy" placeholder="enter your names" [(ngModel)]="newQuote.user"
-                    name="user" #name="ngModel" required>
+                <input type="text" class="form-control" id="writtenBy" placeholder="enter your names" [(ngModel)]="newQuote.writtenBy"
+                    name="user" #writtenBy="ngModel" required>
             </div>
-
-
+<br>
+<div class="form-group">
+        <label for="author">Name of author</label>
+        <input type="text" class="form-control" id="author" placeholder="enter the names of author" [(ngModel)]="newQuote.author"
+            name="user" #author="ngModel" required>
+    </div>
             <div class="form-group">
                 <label for=" text">Enter your quote</label>
                 <textarea class="form-control" id="text" rows="4" [(ngModel)]="newQuote.text" name="text" #description="ngModel"
@@ -29,8 +33,7 @@
 <br>
 <h3>Your quotes</h3>
 <br><br>
-<ol>
-    <ul>
 
-    </ul>
-</ol>
+
+
+
