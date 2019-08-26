@@ -27,3 +27,7 @@ h3{
 #formulaire{
   width:100%;
 }
+label{
+  font-weight: 50;
+  font-size: 18px;
+}
