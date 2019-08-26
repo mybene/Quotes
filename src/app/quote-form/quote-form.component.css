@@ -10,3 +10,7 @@ form {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+label{
+  font-weight: 50;
+  font-size: 18px;
+}
