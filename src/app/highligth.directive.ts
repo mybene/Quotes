@@ -8,6 +8,7 @@ export class HighligthDirective {
   constructor(private elem: ElementRef ) {}
 
     @HostListener("click")onClicks(){
+    
       this.textDeco("aqua");
     }
     
@@ -15,8 +16,15 @@ export class HighligthDirective {
       this.textDeco("black");
     }
     private textDeco(action:string){
-    this.elem.nativeElement.style.background=action;
+    this.elem.nativeElement.style.textDecoration=action;
     }
   }
+
+
+
+
+
+
+
 
 

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row  form">
-        <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
 
     <div *ngFor='let quote of quotes; let i=index'>
@@ -8,10 +8,10 @@
 
             <li>
                 <p appHighligth><b>{{quote.text}} </b> <em> published by: </em>{{quote.writtenBy}} <em>--Author</em>
-                    {{quote.author}} </p>
+                    {{quote.author}}  due on {{quote.completeDate|date|uppercase}} </p>
 
 
-                <!-- <button (click)='toggleDetails(i)'>Details</button> no need to toggle the details -->
+                <button (click)='toggleDetails(i)'>Details</button> no need to toggle the details
                 <button (click)="upvote(i)" class="btn btn-primary btn-xs">
                     <i class="up"></i>{{quote.upvotes}}<img src="https://clipart.info/images/ccovers/1513313791facebook-circle-heart-love-png.png"
                         height="38" width="38">

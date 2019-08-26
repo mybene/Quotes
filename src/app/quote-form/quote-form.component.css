@@ -1,3 +1,13 @@
-form{
+#add{
+    border-radius: 2px;
+    color:blue;
+    background-color:antiquewhite;
     
+}
+
+form{
+    background: transparent;
+    background-color: beige;
+    border:1px solid black;
+
 }

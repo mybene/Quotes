@@ -1,5 +1,8 @@
-<p>
-    {{quote.showDescription}}
+<p>{{quote.description}}</p>
    
-</p>
-<button (click)='quoteComplete(true)'>Complete</button>
+
+<p> complete in{{quote.completeDate|dateCount}}days ago </p>
+<button class="btn btn-danger" (click)='quoteDelete(true)'>Delete quote</button>
+
+
+  

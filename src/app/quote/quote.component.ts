@@ -10,24 +10,24 @@ import { Quote } from "../quote";
 export class QuoteComponent implements OnInit {
  
   quotes:Quote[] = [ 
-    // new Quote(1,'Together,we can','Martin R.K','Black Obama ',new Date(2019,3,14)),
-    new Quote(2,'To die poorer ','Sagesse togolais','Serge Massanvi',new Date(2015,10,14),0,0),
-    // new Quote(3,'Success','Maweden','JP Kayobotsi',new Date(2014,6,08)),
+    new Quote(1,'Together,we can','Martin R.K','Black Obama ',new Date(2019,3,14),0,0),
+    new Quote(2,'To die poorer is a choice ','Sagesse togolais','Serge Massanvi',new Date(2015,10,14),0,0),
+    new Quote(3,'Success','Maweden','JP Kayobotsi',new Date(2014,6,08),0,0),
   ];
 
-  // no needm to hide the details
-  // toggleDetails(index){
-  //   this.quotes[index].showDescription =!this.quotes[index].showDescription;
-  // }
+  
+  toggleDetails(index){
+    this.quotes[index].showDescription =!this.quotes[index].showDescription;
+  }
   
   
-  // upvote(index){
-  //   this.quotes[index].upvotes++;
-  // }
+  upvote(index){
+    this.quotes[index].upvote++;
+  }
 
-  // downvote(index){
-  //   this.quotes[index].downvotes++;
-  // }
+  downvote(index){
+    this.quotes[index].downvote++;
+  }
   completeQuote(isComplete,index){
     if(isComplete){
       this.quotes.splice(index,1);
