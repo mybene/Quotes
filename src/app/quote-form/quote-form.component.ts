@@ -23,9 +23,6 @@ submitQuote(){
   this.quoteText=''
   this.quotePublisher=''
   this.quoteAuthor=''
-  
-
-  // this.quoteDate=todayWithNoTime
   this.quoteLike=0
   this.quoteDislike=0
   this.emitQuote.emit(this.newQuote);
