@@ -1,7 +1,7 @@
 # Quotes
 By Manishimwe Benedicte
 
-##Descrition
+## Description
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
 This project is  angular for creating a quote or input a know quote with its author and the due date.the user can like or dislike the quotes even to delete them.
