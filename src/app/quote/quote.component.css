@@ -1,4 +1,11 @@
-
+.container{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0sJxSc-8bHooVnXWybUseZHo7NNKQUyKau87EmgrINLS8w3hArw");
+    background-size: cover;
+}
+.formulaire{
+   width:50%
+   
+}
 .listed{
     background-color: #ffff;
     opacity: 0.5;
